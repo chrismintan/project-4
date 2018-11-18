@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {hot} from 'react-hot-loader';
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
-import Navbar from './components/navbar';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -37,7 +37,8 @@ class App extends Component {
 
     return (
       <MuiThemeProvider theme={theme}>
-        <Navbar loggedin={loggedin} user={user} setLoggedIn={this.setLoggedIn} />
+        <div>HELLO</div>
+        <div>Add shit here</div>
       </MuiThemeProvider>
     );
   }

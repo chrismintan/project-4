@@ -79,6 +79,7 @@
     "eslint-config-airbnb": ">=16.1.0",
     "eslint-config-fbjs": ">=2.0.1",
     "express": ">=4.16.2",
+    "fs": "0.0.1-security",
     "immutable": ">=3.8.2",
     "method-override": "^3.0.0",
     "pg": "^7.6.1",

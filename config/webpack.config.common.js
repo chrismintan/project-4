@@ -91,6 +91,9 @@ module.exports = {
       }
     }
   },
+  node: {
+    fs: 'empty',
+  },
   stats: {
     assetsSort: '!size',
     children: false,

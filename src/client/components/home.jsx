@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 
 class Home extends Component {
-  state = {};
+  constructor() {
+    super();
+    this.state = {
+      Something: 'hello',
+    }
+  }
   render() {
     return <div>testing home</div>;
   }
