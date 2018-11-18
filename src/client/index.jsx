@@ -2,13 +2,14 @@ import 'babel-polyfill';
 import 'airbnb-browser-shims';
 
 import 'sanitize.css/sanitize.css';
-
-import React from 'react';
+import {makeMainRoutes} from '../client/components/router';
 import ReactDOM from 'react-dom';
-
-import App from './App';
+import dotenv from 'dotenv';
+dotenv.config();
 
 // global styles
 import './style.scss';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+const routes = makeMainRoutes();
+
+ReactDOM.render(routes, document.getElementById('app'));

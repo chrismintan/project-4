@@ -1,24 +1,44 @@
-import React from 'react';
-import { hot } from 'react-hot-loader';
+import React, {Component} from 'react';
+import {hot} from 'react-hot-loader';
+import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
+import blue from '@material-ui/core/colors/blue';
+import Navbar from './components/navbar';
 
-import Counter from './components/counter/counter';
-import Form from './components/form/form';
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: blue[700]
+    }
+  },
+  typography: {
+    useNextVariants: true
+  }
+});
 
-class App extends React.Component {
-  constructor() {
-    super();
+//console.log(theme);
+//console.log(blue)
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.setLoggedIn = this.setLoggedIn.bind(this);
     this.state = {
-      message: 'hello',
+      Loggedin: false,
+      user: ''
     };
   }
 
+  setLoggedIn(loggedin, user) {
+    this.setState({loggedin, user});
+  }
+
   render() {
+    const {loggedin, user} = this.state;
+
     return (
-      <div>
-        <Form />
-        Welcome.
-        <Counter message={this.state.message} />
-      </div>
+      <MuiThemeProvider theme={theme}>
+        <Navbar loggedin={loggedin} user={user} setLoggedIn={this.setLoggedIn} />
+      </MuiThemeProvider>
     );
   }
 }
